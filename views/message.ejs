@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/homepage.css">
     <title>Message by <%=message.user%></title>
 </head>
 <body>
-    <h1>Message Detail</h1>
-    <div class="message">
-            <div class="msg">
-                <p>Text : <%= message.text %></p>
-                <p>By : <%= message.user %></p>
-                <p>On : <%= message.added.toDateString() %></p>
-                <a href="/">go back</a>
+    <%- include('navbar', {addnew:true}) %>
+    <div class="messages">
+        <h1>Message Detail</h1>
+        <div class="msg">
+            <p class="by"><%= message.user %></p>
+            <p class="text"><%= message.text %></p>
+            <div class="bottom">
+                <p class="date"><%= message.added.toDateString() %></p>
+                <a href="/">
+                    <button>Back</button>
+                </a>
             </div>
+        </div>
     </div>
 
 

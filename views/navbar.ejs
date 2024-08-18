@@ -1,6 +1,9 @@
 <nav>
     <h2>Mini Messageboard</h2>
-    <% if(addnew) {%>
+    <% if(locals.addnew) {%>
         <a href="/new"><Button>Add new message</Button></a>
+    <% } %>
+    <% if(locals.goback) {%>
+        <a href="/"><Button>Go back</Button></a>
     <% } %>
 </nav>

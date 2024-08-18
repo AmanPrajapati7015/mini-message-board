@@ -1,8 +1,8 @@
 :root {
-    --bgcolor: #000000;
-    --fontcolor: #FFF078;
-    --secondrybg: #282828;
-    --heading: #E90074;
+    --bgcolor: #aae4f9;
+    --fontcolor: #091b3e;
+    --secondrybg: #3da0d9a6;
+    --heading: #edf0f5;
 }
 
 *{
@@ -12,13 +12,14 @@
 
 
 body{
-    background-color: black;
+    background: url('/background.jpg') no-repeat fixed;
     color: var(--fontcolor);
     font-family: Arial, Helvetica, sans-serif;
 }
 
 nav{
     display: flex;
+    position: sticky;
     padding: 10px 50px;
     background: var(--bgcolor);
     justify-content: space-between;
@@ -28,12 +29,14 @@ nav{
 }
 
 nav h2{
-    color: var(--heading);
+    color: var(--fontcolor);
 }
 
 nav button{
     font-size: 1rem;
     padding: 8px 12px;
+    border: 1px solid var(--fontcolor);
+
 }
 
 button{

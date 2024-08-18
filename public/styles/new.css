@@ -1,0 +1,49 @@
+.form-wrapper{
+    max-width: 500px;
+    margin: auto;
+    background-color: var(--bgcolor);
+    padding: 40px;
+    border-radius: 40px;
+}
+.heading{
+    padding: 10px;
+    border-bottom: 1px solid var(--heading);
+    margin-bottom: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+}
+
+input, textarea{
+    outline: none;
+    border: 2px solid var(--secondrybg);
+    border-radius: 5px;
+    padding: 5px ;
+    background:none;
+    color: var(--fontcolor);
+}
+
+input:focus, textarea:focus{
+    border: 2px solid var(--heading);
+}
+
+
+.btns{
+    display: flex;
+    gap: 30px;
+}
+
+.btns button{
+    flex: 1;
+}
