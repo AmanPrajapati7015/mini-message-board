@@ -24,7 +24,7 @@ router.get('/new', (req, res)=>{
 })
 
 router.post('/new', (req, res)=>{
-  messages.push({...req.body, added:new Date()});
+  messages.unshift({...req.body, added:new Date()});
   res.redirect('/');
 })
 
@@ -35,11 +35,13 @@ router.get('/message/:id', (req, res, next)=>{
     next(new Error('Message does not exsist'));
   }
   else
-  res.render('message', {message:messages[id]});
-
-
-  
+    res.render('message', {message:messages[id]});
 })
 
+
+
+router.get("*", (req, res, next)=>{
+  next(new Error('Page not found'))
+})
 
 module.exports = router;
