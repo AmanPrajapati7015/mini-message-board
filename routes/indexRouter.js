@@ -4,19 +4,19 @@ const router = express.Router();
 
 const messages = [
   {
-    text: "Hi there!",
+    text: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
     user: "Amando",
     added: new Date()
   },
   {
-    text: "Hello World!",
+    text: "The only way to do great work is to love what you do.",
     user: "Charles",
     added: new Date()
   }
 ];
 
 router.get('/', (req, res)=>{
-  res.render('index', {title: 'Mini Messageboard',messages});
+  res.render('index', {messages});
 })
 
 router.get('/new', (req, res)=>{
@@ -32,7 +32,7 @@ router.post('/new', (req, res)=>{
 router.get('/message/:id', (req, res, next)=>{
   const id = req.params.id;
   if(id>=messages.length){
-    next(new Error('Message does not exsist'));
+    next(new Error('This message does not exsist'));
   }
   else
     res.render('message', {message:messages[id]});

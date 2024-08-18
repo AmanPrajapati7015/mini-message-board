@@ -1,0 +1,31 @@
+div.messages{
+    display: flex;
+    max-width: 700px;
+    flex-direction: column;
+    margin: auto;
+    gap: 20px;
+}
+
+div.msg{
+    padding: 20px;
+    background-color: var(--secondrybg);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.msg .by{
+    font-size: 1.4rem;
+    color: var(--heading);
+}
+
+.msg .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.msg .bottom p.date{
+    font-size: 0.8rem;
+}

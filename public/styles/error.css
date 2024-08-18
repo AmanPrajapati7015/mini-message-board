@@ -1,20 +1,5 @@
-:root {
-    --bgcolor: #1E201E;
-    --fontcolor: #ECDFCC;
-    --secondrybg: #3C3D37;
-    --tertiarybg: #697565;
-}
 
-*{
-    margin: 0;
-    padding: 0;
-}
 
-body{
-    background-color: black;
-    color: var(--fontcolor);
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 .section{
     margin: 100px 100px 0;
@@ -45,18 +30,11 @@ h2{
     font-weight: 400;
 }
 button{
-    border: 1px solid var(--tertiarybg);
-    background: none;
     padding: 10px 25px;
-    border-radius: 20px;
-    color: var(--fontcolor);
     font-size: 1.2rem;
     margin: 20px;
 }
 
-button:hover{
-    background-color: var(--secondrybg);
-}
 
 
 #space{
