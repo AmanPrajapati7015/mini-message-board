@@ -1,9 +1,13 @@
+.wrapper{
+    padding: 20px;
+}
+
 .form-wrapper{
     max-width: 500px;
     margin: auto;
     background-color: var(--bgcolor);
-    padding: 40px;
-    border-radius: 40px;
+    padding: 30px;
+    border-radius: 20px;
 }
 .heading{
     padding: 10px;

@@ -9,21 +9,23 @@
 </head>
 <body>
     <%- include('navbar', {goback:true}) %>
-    <div class="form-wrapper">
-        <h2 class="heading"><%= title%></h2>
-        <form action="/new" method="post">
-            <div class="field">
-                <label for="username">Author</label>
-                <input type="text" name="user" placeholder="username..">
-            </div>
-            <div class="field">
-                <label for="message">Message</label>
-                <textarea name="text" id="message" rows="5" placeholder="Type your message here..."></textarea>
-            </div>
-            <div class="btns">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+    <div class="wrapper">
+        <div class="form-wrapper">
+            <h2 class="heading"><%= title%></h2>
+            <form action="/new" method="post">
+                <div class="field">
+                    <label for="username">Author</label>
+                    <input type="text" name="user" placeholder="username..">
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea name="text" id="message" rows="5" placeholder="Type your message here..."></textarea>
+                </div>
+                <div class="btns">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
