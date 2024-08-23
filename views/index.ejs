@@ -12,11 +12,11 @@
     <div class="messages">
         <% messages.forEach((message,i) => { %>
             <div class="msg">
-                <p class="by"><%= message.user %></p>
-                <p class="text"><%= message.text %></p>
+                <p class="by"><%= message.username %></p>
+                <p class="text"><%= message.message %></p>
                 <div class="bottom">
-                    <p class="date"><%= message.added.toDateString() %></p>
-                    <a href="/message/<%=i%>">
+                    <p class="date"><%= message.added_ago %></p>
+                    <a href="/message/<%=message.id%>">
                         <button>Open</button>
                     </a>
                 </div>

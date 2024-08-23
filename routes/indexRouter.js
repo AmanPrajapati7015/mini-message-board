@@ -1,4 +1,7 @@
 const express = require('express');
+const {getMessages,addMessage, getMessageById} = require('../db/queries');
+const {formatDistanceToNow} = require('date-fns');
+
 
 const router = express.Router();
 
@@ -15,27 +18,32 @@ const messages = [
   }
 ];
 
-router.get('/', (req, res)=>{
-  res.render('index', {messages});
+router.get('/',async (req, res)=>{
+  const msgs = await getMessages();
+  //adding a new member in msg i.e. added_ago 
+  const msgWithAgo = msgs.map(msg=>({...msg, added_ago: formatDistanceToNow(msg.added, { addSuffix: true })})) 
+  res.render('index', {messages:msgWithAgo});
 })
 
 router.get('/new', (req, res)=>{
   res.render('new', {title:'Add New Message'});
 })
 
-router.post('/new', (req, res)=>{
-  messages.unshift({...req.body, added:new Date()});
+router.post('/new', async (req, res)=>{
+  const msg = { username : req.body.user, message: req.body.text};
+  await addMessage(msg);
   res.redirect('/');
 })
 
 
-router.get('/message/:id', (req, res, next)=>{
+router.get('/message/:id', async(req, res, next)=>{
   const id = req.params.id;
-  if(id>=messages.length){
-    next(new Error('This message does not exsist'));
-  }
+  const row = await getMessageById(id);
+  
+  if(row.length != 0)
+    res.render('message', {message:row[0]});
   else
-    res.render('message', {message:messages[id]});
+    next(new Error('This message does not exsist'));
 })
 
 

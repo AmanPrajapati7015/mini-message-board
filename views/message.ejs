@@ -12,10 +12,10 @@
     <div class="messages">
         <h1>Message Detail</h1>
         <div class="msg">
-            <p class="by"><%= message.user %></p>
-            <p class="text"><%= message.text %></p>
+            <p class="by"><%= message.username %></p>
+            <p class="text"><%= message.message %></p>
             <div class="bottom">
-                <p class="date"><%= message.added.toDateString() %></p>
+                <p class="date"><%= message.added_ago %></p>
                 <a href="/">
                     <button>Back</button>
                 </a>
