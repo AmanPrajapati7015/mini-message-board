@@ -19,5 +19,5 @@ app.use((err, req, res, next)=>{
     res.render('error',{errorMsg:err.message});
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT,'0.0.0.0', ()=>console.log(`started your app on ${PORT} port`));
+const PORT =  3000;
+app.listen(PORT, ()=>console.log(`started your app on ${PORT} port`));
